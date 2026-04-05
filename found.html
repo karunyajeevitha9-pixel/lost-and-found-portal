@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Report Found Item</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+<h2 class="logo">VIT Lost & Found</h2>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="lost.html">Report Lost</a></li>
+  <li><a href="found.html">Report Found</a></li>
+  <li><a href="items.html">Browse Items</a></li>
+</ul>
+</nav>
+
+<section class="form-section">
+
+  <h1>Report Found Item</h1>
+  <p>Please enter the details of the item you found.</p>
+
+  <form id="foundForm">
+
+    <label>Item Name</label>
+    <input
+      type="text" id="itemName"
+      pattern="[A-Za-z ]+" required
+      oninvalid="this.setCustomValidity('Item name should contain only alphabets')"
+      oninput="this.setCustomValidity('')">
+
+    <label>Description</label>
+    <textarea id="description" required></textarea>
+
+    <label>Category</label>
+    <select id="category" required>
+      <option value="">Select Category</option>
+      <option>Electronics</option>
+      <option>Accessories</option>
+      <option>Stationery</option>
+      <option>ID Cards</option>
+      <option>Wallets</option>
+      <option>Bottles</option>
+      <option>Others</option>
+    </select>
+
+    <label>Reference Image (optional)</label>
+    <input type="file" id="image" accept=".png,.jpg,.jpeg,image/png,image/jpeg">
+
+    <label>Location Found</label>
+    <input
+      type="text" id="location"
+      pattern="[A-Za-z ]+" required
+      oninvalid="this.setCustomValidity('Location should contain only alphabets')"
+      oninput="this.setCustomValidity('')">
+
+    <label>Date Found</label>
+    <input type="date" id="dateFound" required>
+
+    <label>Your Contact (Email or Phone)</label>
+    <input
+      type="text" id="contact"
+      pattern="(^[0-9]{10}$)|(^[^\s@]+@[^\s@]+\.[^\s@]+$)"
+      required
+      oninvalid="this.setCustomValidity('Enter a valid 10-digit phone number or email')"
+      oninput="this.setCustomValidity('')">
+
+    <div class="form-buttons">
+      <button type="submit">Submit Report</button>
+      <button type="button" onclick="refreshPage()">Refresh Page</button>
+    </div>
+
+  </form>
+</section>
+
+<!-- ✅ type="module" is required for Firebase ES module imports -->
+<script type="module" src="found.js"></script>
+
+</body>
+</html>

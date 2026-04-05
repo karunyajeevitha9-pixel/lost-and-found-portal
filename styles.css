@@ -1,0 +1,350 @@
+body{
+margin:0;
+font-family:Arial;
+background:#f5f7fb;
+}
+
+
+/* Navbar */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#0F2A44;
+padding:15px 40px;
+}
+
+.logo{
+color:white;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+nav ul li a:hover{
+text-decoration:underline;
+}
+
+/* Navbar */
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:"";
+    width:0%;
+    height:2px;
+    background:white;
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+
+/* Hero Section */
+.hero{
+position:relative;
+text-align:center;
+height:480px;
+display:flex;
+align-items:center;
+justify-content:center;
+overflow:hidden;
+background:#f5f7fb;
+}
+
+.float{
+position:absolute;
+width:55px;
+opacity:0.5;   /* reduce distraction */
+pointer-events:none;
+animation:popIn 0.8s ease forwards, float 5s ease-in-out infinite;
+}
+
+/* positions */
+
+.item1{ top:60px; left:12%; }
+.item2{ top:80px; right:12%; }
+.item3{ bottom:60px; left:15%; }
+.item4{ bottom:60px; right:15%; }
+.item5{ top:200px; left:5%; }
+.item6{ top:200px; right:5%; }
+
+
+/* pop-in effect */
+
+@keyframes popIn{
+from{
+opacity:0;
+transform:scale(0.5);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+
+/* floating movement */
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* background image */
+
+background-image: linear-gradient(
+rgba(245,247,251,0.75),
+rgba(245,247,251,0.75)
+),
+url("https://uploads.onecompiler.io/44fqd8ydj/44fq9kxrx/Screenshot%202026-03-08%20142640.png");
+
+background-size:900px;
+background-position:right center;
+background-repeat:no-repeat;
+}
+
+/* text section */
+
+.hero-content{
+max-width:500px;
+text-align:center;
+margin:450px;   /* pushes text into middle space */
+animation:slideIn 1s ease;
+z-index:2;
+
+}
+
+.hero-content h1{
+font-size:44px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+/* animation */
+
+@keyframes slideIn{
+from{
+opacity:0;
+transform:translateX(-30px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+/* Buttons */
+
+button{
+background:#0F2A44;
+color:white;
+border:none;
+padding:14px 30px;
+text-align: center;
+margin:15px;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+
+/* fixes */
+white-space:nowrap;
+min-width:170px;
+}
+.buttons{
+display:flex;
+justify-content: center;
+gap:16px;
+
+margin-top:20px;
+}
+
+button:hover{
+background:#0B1F33;
+transform:translateY(-3px);
+}
+
+
+/* Features Section */
+
+.features{
+text-align:center;
+padding:60px 20px;
+background:white;
+}
+
+.feature-container{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.feature-box{
+width:200px;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 3px 10px rgba(0,0,0,0.1);
+}
+
+.feature-box img{
+width:60px;
+margin-bottom:10px;
+}
+.form-section{
+max-width:600px;
+margin:60px auto;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input, textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:14px;
+}
+
+textarea{
+resize:none;
+height:100px;
+}
+/* File input styling */
+
+input[type="file"]{
+padding:8px;
+border-radius:6px;
+border:1px solid #ccc;
+background:white;
+}
+
+
+/* Form buttons layout */
+
+.form-buttons{
+display:flex;
+gap:15px;
+margin-top:10px;
+}
+
+
+/* Refresh button style */
+
+.form-buttons button:nth-child(2){
+background:#6c757d;
+}
+
+.form-buttons button:nth-child(2):hover{
+background:#6c757d;
+}
+/* Highlight invalid fields */
+/* Form buttons layout */
+
+.form-buttons{
+display:flex;
+gap:15px;
+margin-top:10px;
+width:100%;
+}
+
+/* make buttons fill the row equally */
+
+.form-buttons button{
+flex:1;
+margin:0;
+min-width:0;
+}
+
+/* Edit button */
+
+
+
+/* Highlight valid fields */
+
+input:valid, textarea:valid{
+border:2px solid #2ecc71;
+}
+
+
+/* Focus effect */
+
+input:focus, textarea:focus{
+outline:none;
+border:2px solid #0F2A44;
+}
+
+
+/* Shake animation */
+
+@keyframes shake{
+0%{transform:translateX(0);}
+25%{transform:translateX(-5px);}
+50%{transform:translateX(5px);}
+75%{transform:translateX(-5px);}
+100%{transform:translateX(0);}
+}
+
+
+/* Apply shake when invalid */
+
+input:invalid:focus{
+animation:shake 0.3s;
+}
+
+select{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:20px;
+background:#0F2A44;
+color:white;
+margin-top:40px;
+}
+this is my final css code
